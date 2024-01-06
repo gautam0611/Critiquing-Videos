@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d3da4cf-9857-48c4-a07b-d40656227575" name="Changes" comment="setting up project structure (added maven and few other files)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Folder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Format.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Media.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Folder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Format.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,25 +39,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "last_opened_file_path": "/Users/gautamnarayan/Desktop/Coding Projects/Critiquing-Videos",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/Users/gautamnarayan/Desktop/Coding Projects/Critiquing-Videos/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gautamnarayan/Desktop/Coding Projects/Critiquing-Videos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/gautamnarayan/Desktop/Coding Projects/Critiquing-Videos/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
