@@ -5,5 +5,5 @@ package Critiquing;
  *
  * Our main functionality to implement in this class will be formatting the critique document.
  */
-public class Format {
+public final class Format {
 }

@@ -5,5 +5,5 @@ package Critiquing;
  *
  * While it'll mainly be used as a "helper" class to create a Timestamp object, we will need it for various operations.
  */
-public class Timestamp {
+public final class Timestamp {
 }

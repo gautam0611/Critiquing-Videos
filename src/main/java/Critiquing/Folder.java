@@ -5,5 +5,5 @@ package Critiquing;
  *
  * We will perform various operations on folders from compressing, compiling, and creating just to name a few.
  */
-public class Folder {
+public final class Folder {
 }
