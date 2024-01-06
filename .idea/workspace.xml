@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d3da4cf-9857-48c4-a07b-d40656227575" name="Changes" comment="adding files to repo">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="0d3da4cf-9857-48c4-a07b-d40656227575" name="Changes" comment="setting up project structure (added maven and few other files)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Folder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Format.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Media.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -63,7 +69,7 @@
       <updated>1704145052167</updated>
       <workItem from="1704145053448" duration="335000" />
       <workItem from="1704145397216" duration="5598000" />
-      <workItem from="1704554747715" duration="975000" />
+      <workItem from="1704554747715" duration="2942000" />
     </task>
     <task id="LOCAL-00001" summary="adding files to repo">
       <option name="closed" value="true" />
@@ -73,7 +79,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704247522586</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="setting up project structure (added maven and few other files)">
+      <option name="closed" value="true" />
+      <created>1704555792961</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704555792961</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,17 +95,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding files to repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding files to repo" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="setting up project structure (added maven and few other files)" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting up project structure (added maven and few other files)" />
   </component>
 </project>
