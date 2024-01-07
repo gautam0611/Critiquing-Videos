@@ -8,7 +8,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Critiquing/TimestampTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Critiquing/TimestampTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Folder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Folder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Format.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Format.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Media.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Media.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Screenshot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Screenshot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Video.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Video.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Critiquing/TimestampTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Critiquing/TimestampTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +85,8 @@
       <recent name="Critiquing" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TimestampTest.parseTimestampMinuteAndMilliseconds">
-    <configuration name="TimestampTest.parseTimestampJustMilliseconds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TimestampTest.calculateDuration">
+    <configuration name="TimestampTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Critiquing-Videos" />
       <extension name="coverage">
         <pattern>
@@ -86,13 +96,28 @@
       </extension>
       <option name="PACKAGE_NAME" value="Critiquing" />
       <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
-      <option name="METHOD_NAME" value="parseTimestampJustMilliseconds" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimestampTest.calculateDuration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Critiquing-Videos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Critiquing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Critiquing" />
+      <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
+      <option name="METHOD_NAME" value="calculateDuration" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimestampTest.parseTimestampJustMinute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TimestampTest.parseTimestampHasIncorrectValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Critiquing-Videos" />
       <extension name="coverage">
         <pattern>
@@ -102,7 +127,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Critiquing" />
       <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
-      <option name="METHOD_NAME" value="parseTimestampJustMinute" />
+      <option name="METHOD_NAME" value="parseTimestampHasIncorrectValues" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,22 +144,6 @@
       <option name="PACKAGE_NAME" value="Critiquing" />
       <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
       <option name="METHOD_NAME" value="parseTimestampMinuteAndMilliseconds" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TimestampTest.parseTimestampMinuteAndSeconds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Critiquing-Videos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Critiquing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Critiquing" />
-      <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
-      <option name="METHOD_NAME" value="parseTimestampMinuteAndSeconds" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TimestampTest.calculateDuration" />
+        <item itemvalue="JUnit.TimestampTest.parseTimestampHasIncorrectValues" />
+        <item itemvalue="JUnit.TimestampTest" />
         <item itemvalue="JUnit.TimestampTest.parseTimestampMinuteAndMilliseconds" />
         <item itemvalue="JUnit.TimestampTest.parseTimestampSecondsAndMilliseconds" />
-        <item itemvalue="JUnit.TimestampTest.parseTimestampMinuteAndSeconds" />
-        <item itemvalue="JUnit.TimestampTest.parseTimestampJustMilliseconds" />
-        <item itemvalue="JUnit.TimestampTest.parseTimestampJustMinute" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +186,7 @@
       <workItem from="1704145053448" duration="335000" />
       <workItem from="1704145397216" duration="5598000" />
       <workItem from="1704554747715" duration="2942000" />
-      <workItem from="1704587769794" duration="20514000" />
+      <workItem from="1704587769794" duration="25116000" />
     </task>
     <task id="LOCAL-00001" summary="adding files to repo">
       <option name="closed" value="true" />
@@ -219,9 +228,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java</url>
-          <line>209</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/test/java/Critiquing/TimestampTest.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -79,23 +79,19 @@ public final class Timestamp {
         return this.milliseconds;
     }
 
-//    // a helper function which converts the given timestamp to seconds
-//    private double convertTimestampToSeconds(Timestamp ts) {
-//
-//    }
 
     /**
      * Given a string timestamp, parse the timestamp accordingly and returns it as an object
      *
-     * @param timeStampStr
+     * @param timeStampStr The string timestamp that needs to be parsed (ex: 1:25.26)
      * @return a Timestamp object
      */
     public Timestamp parseTimestamp(String timeStampStr) {
+        // local variables that we will use
         String[] timeElements = new String[0];
         Timestamp myTimestamp = new Timestamp.Builder().build();
 
-
-        // try to parse the element
+        // parse the element
         try {
             // check if it has a period
             if (timeStampStr.contains(".") && !timeStampStr.contains(":")) {
@@ -155,8 +151,6 @@ public final class Timestamp {
         return myTimestamp;
     }
 
-    // helper function which creates a Timestamp given length of the array
-
     // helper function to see if it's a valid int once parsed
     private boolean isValidInt(String[] str) {
         boolean flag = true;
@@ -183,16 +177,28 @@ public final class Timestamp {
 //        return;
 //    }
 
-//    /**
-//     * Calculates the duration within the given range of timestamps
-//     *
-//     * @param start
-//     * @param end
-//     * @return the calculated duration in seconds
-//     */
-//    public long calculateDuration(Timestamp start, Timestamp end) {
-//        return;
-//    }
+    /**
+     * Calculates the duration within the given range of timestamps
+     *
+     * @param start the start Timestamp in the range
+     * @param end   the end Timestamp in the range
+     * @return the calculated duration in seconds
+     */
+    public long calculateDuration(Timestamp start, Timestamp end) {
+        // convert everything to seconds
+        long startMin = (long) start.getMinute() * 60;
+        long startSeconds = (long) start.getSeconds();
+        long startMilliseconds = start.getMilliseconds() / 100;
+        long endMin = (long) end.getMinute() * 60;
+        long endSeconds = (long) end.getSeconds();
+        long endMilliseconds = end.getMilliseconds() / 100;
+
+        // sum up everything
+        long startTotalInSeconds = startMin + startSeconds + startMilliseconds;
+        long endTotalInSeconds = endMin + endSeconds + endMilliseconds;
+
+        return endTotalInSeconds - startTotalInSeconds;
+    }
 
 //    /**
 //     * Given a timestamp range (ex: 1:26-1:27) and an optional interval (ex: 0.2ms) the method returns every timestamp in that range
@@ -203,14 +209,4 @@ public final class Timestamp {
 //    public List<Timestamp> grabEveryTimestampInRange(Timestamp start, Timestamp end, double... interval) {
 //        return;
 //    }
-
-    public static void main(String[] args) {
-        Timestamp ts1 = new Timestamp.Builder().build();
-        Timestamp ts2 = ts1.parseTimestamp("0:20.20");
-        System.out.println(ts2);
-        System.out.println(ts2.getSeconds());
-        System.out.println(ts2.getMilliseconds());
-    }
-
-
 }
