@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d3da4cf-9857-48c4-a07b-d40656227575" name="Changes" comment="setting up project structure (added maven and few other files)">
+    <list default="true" id="0d3da4cf-9857-48c4-a07b-d40656227575" name="Changes" comment="wrote out methods for timestamp class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Folder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Format.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Critiquing/TimestampTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Critiquing/TimestampTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Folder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Folder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Format.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Format.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Media.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Media.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Screenshot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Screenshot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Timestamp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Critiquing/Video.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Critiquing/Video.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Critiquing/TimestampTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Critiquing/TimestampTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,14 +30,21 @@
       <list>
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -39,25 +54,127 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/gautamnarayan/Desktop/Coding Projects/Critiquing-Videos&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/gautamnarayan/Desktop/Coding Projects/Critiquing-Videos/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "TimestampClass",
+    "jdk.selected.JAVA_MODULE": "openjdk-21",
+    "last_opened_file_path": "/Users/gautamnarayan/Desktop/Coding Projects/Critiquing-Videos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/gautamnarayan/Desktop/Coding Projects/Critiquing-Videos/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Critiquing" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TimestampTest.calculateDuration">
+    <configuration name="TimestampTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Critiquing-Videos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Critiquing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Critiquing" />
+      <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimestampTest.calculateDuration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Critiquing-Videos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Critiquing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Critiquing" />
+      <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
+      <option name="METHOD_NAME" value="calculateDuration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimestampTest.parseTimestampHasIncorrectValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Critiquing-Videos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Critiquing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Critiquing" />
+      <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
+      <option name="METHOD_NAME" value="parseTimestampHasIncorrectValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimestampTest.parseTimestampMinuteAndMilliseconds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Critiquing-Videos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Critiquing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Critiquing" />
+      <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
+      <option name="METHOD_NAME" value="parseTimestampMinuteAndMilliseconds" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimestampTest.parseTimestampSecondsAndMilliseconds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Critiquing-Videos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Critiquing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Critiquing" />
+      <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
+      <option name="METHOD_NAME" value="parseTimestampSecondsAndMilliseconds" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TimestampTest.calculateDuration" />
+        <item itemvalue="JUnit.TimestampTest.parseTimestampHasIncorrectValues" />
+        <item itemvalue="JUnit.TimestampTest" />
+        <item itemvalue="JUnit.TimestampTest.parseTimestampMinuteAndMilliseconds" />
+        <item itemvalue="JUnit.TimestampTest.parseTimestampSecondsAndMilliseconds" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,6 +186,7 @@
       <workItem from="1704145053448" duration="335000" />
       <workItem from="1704145397216" duration="5598000" />
       <workItem from="1704554747715" duration="2942000" />
+      <workItem from="1704587769794" duration="25116000" />
     </task>
     <task id="LOCAL-00001" summary="adding files to repo">
       <option name="closed" value="true" />
@@ -86,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704555792961</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="wrote out methods for timestamp class">
+      <option name="closed" value="true" />
+      <created>1704646667986</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704646667986</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +221,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding files to repo" />
     <MESSAGE value="setting up project structure (added maven and few other files)" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting up project structure (added maven and few other files)" />
+    <MESSAGE value="wrote out methods for timestamp class" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrote out methods for timestamp class" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Critiquing/TimestampTest.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
