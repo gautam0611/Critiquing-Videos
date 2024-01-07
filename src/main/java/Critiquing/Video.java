@@ -6,4 +6,5 @@ package Critiquing;
  * Our main functionality to implement in this class will involve trimming a video into numerous other videos.
  */
 public final class Video {
+
 }
