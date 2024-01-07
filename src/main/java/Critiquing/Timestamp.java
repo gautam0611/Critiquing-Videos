@@ -1,7 +1,6 @@
 package Critiquing;
 
-import java.sql.*;
-import java.text.SimpleDateFormat;
+import java.util.List;
 
 /**
  * This class will represent any operations we want to perform involving Timestamps
@@ -26,6 +25,7 @@ public final class Timestamp {
     }
 
     /**
+     * Gets the correct minute from the specified timestamp
      *
      * @return the minute from the timestamp
      */
@@ -34,6 +34,7 @@ public final class Timestamp {
     }
 
     /**
+     * Gets the correct second from the specified timestamp
      *
      * @return the seconds from the timestamp
      */
@@ -42,6 +43,7 @@ public final class Timestamp {
     }
 
     /**
+     * Gets the correct millisecond from the specified timestamp
      *
      * @return the milliseconds (if specified) from the timestamp
      */
@@ -49,39 +51,54 @@ public final class Timestamp {
         return this.milliseconds;
     }
 
+    // a helper function which converts the given timestamp to seconds
+    private double convertTimestampToSeconds(Timestamp ts) {
+
+    }
+
+    /**
+     * Given a string timestamp, parse the timestamp accordingly and returns it as an object
+     *
+     * @param timeStampStr
+     * @return a Timestamp object
+     */
+    public Timestamp parseTimestamp(String timeStampStr) {
+        return;
+    }
+
+
+    // @FIXME discuss if we need to have a timestamp in a "standard" format because FFMpeg takes in strings
 //    /**
-//     *
-//     * @param timestampStr
-//     * @return
+//     * Given a string timestamp, parases the timestamp accordingly and returns it in DateFormatter format
+//     * @param timeStampStr
+//     * @return a properly formatted String
 //     */
-//    public Timestamp parseTimestamp(String timestampStr) {
-//        Timestamp myTimestamp = null;
-//        switch (timestampStr) {
-//            case "mm:ss":
-//                myTimestamp = new Timestamp(this.getMinute(), this.getSeconds());
-//                break;
-//            case "mm:ss.SS":
-//                myTimestamp = new Timestamp(this.getMinute(), this.getSeconds(), this.getMilliseconds());
-//                break;
-//            default:
-//                throw new RuntimeException("not a valid timestamp");
-//        }
-//        return myTimestamp;
+//    public String formatTimetoStandard(String timeStampStr) {
+//        return;
 //    }
-//
-//    // converts the timestamp to the actual format
-//    private SimpleDateFormat convertTimestampToOfficialFormat(String timeStampStr) {
-//        SimpleDateFormat sdf1 = new SimpleDateFormat("mm:ss");
-////        SimpleDateFormat sdf2 = new SimpleDateFormat("mm:ss.SSS");
-//        SimpleDateFormat myFormat;
-//
-//        try {
-//           myFormat = sdf1.format(timeStampStr);
-//        } catch (RuntimeException re) {
-//            System.out.println("Not a valid format");
-//        }
-//
-//    }
+
+    /**
+     * Calculates the duration within the given range of timestamps
+     *
+     * @param start
+     * @param end
+     * @return the calculated duration in seconds
+     */
+    public long calculateDuration(Timestamp start, Timestamp end) {
+        return;
+    }
+
+    /**
+     * Given a timestamp range (ex: 1:26-1:27) and an optional interval (ex: 0.2ms) the method returns every timestamp in that range
+     *
+     * @param start, end, interval: The first two arguments must be valid timestamps and the optional third argument must be a value less than 1.
+     * @return a list of all the timestamps in the given range
+     */
+    public List<Timestamp> grabEveryTimestampInRange(Timestamp start, Timestamp end, double... interval) {
+        return;
+    }
+
+
 
     public static void main(String[] args) {
         Timestamp ts = new Timestamp(2, 30);
