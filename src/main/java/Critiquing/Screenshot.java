@@ -55,6 +55,4 @@ public final class Screenshot extends Media<Screenshot> {
             System.err.println("Error trimming video. Exit code: " + exitCode);
         }
     }
-
-
 }

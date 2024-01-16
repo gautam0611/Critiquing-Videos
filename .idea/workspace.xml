@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d3da4cf-9857-48c4-a07b-d40656227575" name="Changes" comment="wrote out methods for timestamp class">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Critiquing/MediaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Critiquing/TimestampTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Critiquing/TimestampTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -79,7 +79,23 @@
       <recent name="Critiquing" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TimestampTest.calculateDuration">
+  <component name="RunManager" selected="JUnit.MediaTest.parseTimestampJustSeconds">
+    <configuration name="MediaTest.parseTimestampJustSeconds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Critiquing-Videos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Critiquing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Critiquing" />
+      <option name="MAIN_CLASS_NAME" value="Critiquing.MediaTest" />
+      <option name="METHOD_NAME" value="parseTimestampJustSeconds" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TimestampTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Critiquing-Videos" />
       <extension name="coverage">
@@ -143,29 +159,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimestampTest.parseTimestampSecondsAndMilliseconds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Critiquing-Videos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Critiquing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Critiquing" />
-      <option name="MAIN_CLASS_NAME" value="Critiquing.TimestampTest" />
-      <option name="METHOD_NAME" value="parseTimestampSecondsAndMilliseconds" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MediaTest.parseTimestampJustSeconds" />
         <item itemvalue="JUnit.TimestampTest.calculateDuration" />
         <item itemvalue="JUnit.TimestampTest.parseTimestampHasIncorrectValues" />
         <item itemvalue="JUnit.TimestampTest" />
         <item itemvalue="JUnit.TimestampTest.parseTimestampMinuteAndMilliseconds" />
-        <item itemvalue="JUnit.TimestampTest.parseTimestampSecondsAndMilliseconds" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +223,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Critiquing/TimestampTest.java</url>
-          <line>30</line>
+          <line>23</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

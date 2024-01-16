@@ -79,106 +79,20 @@ public final class Timestamp {
         return this.milliseconds;
     }
 
-
-//    /**
-//     * Given a string timestamp, parse the timestamp accordingly and returns it as an object
-//     *
-//     * @param timeStampStr The string timestamp that needs to be parsed (ex: 1:25.26)
-//     * @return a Timestamp object
-//     */
-//    public Timestamp parseTimestamp(String timeStampStr) {
-//        // local variables that we will use
-//        String[] timeElements = new String[0];
-//        Timestamp myTimestamp = new Timestamp.Builder().build();
-//
-//        // parse the element
-//        try {
-//            // check if it has a period
-//            if (timeStampStr.contains(".") && !timeStampStr.contains(":")) {
-//                timeElements = timeStampStr.split(".");
-//
-//                // check that both are valid ints
-//                boolean isValid = isValidInt(timeElements);
-//
-//                // length of the array needs to be 2
-//                if (timeElements.length != 2 && !isValid) {
-//                    throw new IllegalArgumentException("Not a valid timestamp");
-//                } else {
-//                    myTimestamp = new Timestamp.Builder()
-//                            .setMinute(Integer.parseInt(timeElements[0]))
-//                            .setSeconds(Integer.parseInt(timeElements[1]))
-//                            .setMilliseconds(Integer.parseInt(timeElements[2]))
-//                            .build();
-//                }
-//
-//            } else if (!timeStampStr.contains(".") && timeStampStr.contains(":")) {
-//                timeElements = timeStampStr.split(":");
-//
-//                // check that both are valid ints
-//                boolean isValid = isValidInt(timeElements);
-//
-//                // length of the array needs to be 2
-//                if (timeElements.length != 2 && !isValid) {
-//                    throw new IllegalArgumentException("Not a valid timestamp");
-//                } else {
-//                    myTimestamp = new Timestamp.Builder()
-//                            .setMinute(Integer.parseInt(timeElements[0]))
-//                            .setSeconds(Integer.parseInt(timeElements[1]))
-//                            .build();
-//                }
-//            } else if (timeStampStr.contains(".") && timeStampStr.contains(":")) {
-//                timeElements = timeStampStr.split("[:.]");
-//
-//                // check that both are valid ints
-//                boolean isValid = isValidInt(timeElements);
-//
-//                // length of the array needs to be 3
-//                if (timeElements.length != 3 && !isValid) {
-//                    throw new IllegalArgumentException("Not a valid timestamp");
-//                } else {
-//                    myTimestamp = new Timestamp.Builder()
-//                            .setMinute(Integer.parseInt(timeElements[0]))
-//                            .setSeconds(Integer.parseInt(timeElements[1]))
-//                            .setMilliseconds(Integer.parseInt(timeElements[2]))
-//                            .build();
-//                }
-//            } else {
-//                throw new IllegalArgumentException("not a valid timestamp");
-//            }
-//        } catch (IllegalArgumentException re) {
-//            System.out.println("Not a valid timestamp");
-//        }
-//        return myTimestamp;
-//    }
-//
-//    // helper function to see if it's a valid int once parsed
-//    private boolean isValidInt(String[] str) {
-//        boolean flag = true;
-//        for (String s : str) {
-//            try {
-//                Integer.parseInt(s);
-//                flag = true;
-//            } catch (NumberFormatException e) {
-//                System.out.println("Not a valid Integer");
-//                flag = false;
-//            }
-//        }
-//        return flag;
-//    }
-
     // @FIXME need to implement
 
-    /**
-     * Given a string timestamp, parases the timestamp accordingly and returns it in DateFormatter format
-     *
-     * @param timeStampStr
-     * @return a properly formatted String
-     */
-    public String formatTimeToStandard(String timeStampStr) {
-        return null;
-    }
+//    /**
+//     * Given a string timestamp, parases the timestamp accordingly and returns it in DateFormatter format
+//     *
+//     * @param timeStampStr
+//     * @return a properly formatted String
+//     */
+//    public String formatTimeToStandard(String timeStampStr) {
+//        return null;
+//    }
 
 // @FIXME need to implement
+
 //    /**
 //     * Given a timestamp range (ex: 1:26-1:27) and an optional interval (ex: 0.2ms) the method returns every timestamp in that range
 //     *
