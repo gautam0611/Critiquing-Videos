@@ -5,7 +5,7 @@ package Critiquing;
  * <p>
  * Our main functionality to implement in this class will involve trimming a video into numerous other videos.
  */
-public final class Video implements Media<Video> {
+public final class Video extends Media<Video> {
 
     @Override
     public Video convertTo(String extension) {

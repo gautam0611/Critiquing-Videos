@@ -176,29 +176,7 @@ public final class Timestamp {
 //    public String formatTimetoStandard(String timeStampStr) {
 //        return;
 //    }
-
-    /**
-     * Calculates the duration within the given range of timestamps
-     *
-     * @param start the start Timestamp in the range
-     * @param end   the end Timestamp in the range
-     * @return the calculated duration in seconds
-     */
-    public long calculateDuration(Timestamp start, Timestamp end) {
-        // convert everything to seconds
-        long startMin = (long) start.getMinute() * 60;
-        long startSeconds = (long) start.getSeconds();
-        long startMilliseconds = start.getMilliseconds() / 100;
-        long endMin = (long) end.getMinute() * 60;
-        long endSeconds = (long) end.getSeconds();
-        long endMilliseconds = end.getMilliseconds() / 100;
-
-        // sum up everything
-        long startTotalInSeconds = startMin + startSeconds + startMilliseconds;
-        long endTotalInSeconds = endMin + endSeconds + endMilliseconds;
-
-        return endTotalInSeconds - startTotalInSeconds;
-    }
+    
 
 //    /**
 //     * Given a timestamp range (ex: 1:26-1:27) and an optional interval (ex: 0.2ms) the method returns every timestamp in that range
