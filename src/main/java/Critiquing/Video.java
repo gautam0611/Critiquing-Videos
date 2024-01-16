@@ -1,5 +1,7 @@
 package Critiquing;
 
+import java.io.IOException;
+
 /**
  * This class will represent any operations we want to perform involving videos
  * <p>
@@ -13,7 +15,8 @@ public final class Video extends Media<Video> {
     }
 
     @Override
-    public void cutAndDownload(String media, String inputPath, String outputPath, int... time) {
+    public void cutAndDownload(String media, String inputPath, String outputPath) throws IOException, InterruptedException {
 
     }
+
 }

@@ -10,15 +10,16 @@ import java.io.IOException;
  */
 public final class Screenshot extends Media<Screenshot> {
     // initialize instance variables
-    private Timestamp start, end;
-    private long duration;
-    private String name;
+    private final Timestamp start;
+    private final Timestamp end;
+    private final long duration;
+    private final String screenshotName;
 
     // constructor
-    public Screenshot(Timestamp start, Timestamp end, String name) {
+    public Screenshot(Timestamp start, Timestamp end, String screenshotName) {
         this.start = start;
         this.end = end;
-        this.name = name;
+        this.screenshotName = screenshotName;
         this.duration = calculateDuration(this.start, this.end);
     }
 
@@ -29,13 +30,15 @@ public final class Screenshot extends Media<Screenshot> {
     }
 
     @Override
-    public void cutAndDownload(String media, String inputPath, String outputPath, int... time) throws IOException, InterruptedException {
+    public void cutAndDownload(String media, String inputPath, String outputPath) throws IOException, InterruptedException {
+        // the start time
+
         // FFmpeg command to trim video
         String[] command = {
                 "ffmpeg",
                 "-i", inputPath,
-                "-ss", String.valueOf(time[0]), // the startTime
-                "-t", String.valueOf(time[1]), // the duration
+                "-ss", // need to insert this value // the startTime
+                "-t", // need to insert this value, // the duration
                 "-c", "copy",
                 outputPath
         };
@@ -51,6 +54,7 @@ public final class Screenshot extends Media<Screenshot> {
         } else {
             System.err.println("Error trimming video. Exit code: " + exitCode);
         }
-
     }
+
+
 }

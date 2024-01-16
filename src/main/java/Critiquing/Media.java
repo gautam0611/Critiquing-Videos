@@ -23,9 +23,8 @@ public abstract class Media<T> {
      * @param media      will be "FFmepg" if we are performing actions regarding videos
      * @param inputPath  the input file path that we want to get the file from
      * @param outputPath the output file path that we want to download to
-     * @param time       a varag that
      */
-    public abstract void cutAndDownload(String media, String inputPath, String outputPath, int... time) throws IOException, InterruptedException;
+    public abstract void cutAndDownload(String media, String inputPath, String outputPath) throws IOException, InterruptedException;
 
     /**
      * Calculates the duration within the given range of timestamps
@@ -48,6 +47,92 @@ public abstract class Media<T> {
         long endTotalInSeconds = endMin + endSeconds + endMilliseconds;
 
         return endTotalInSeconds - startTotalInSeconds;
+    }
+
+    /**
+     * Given a string timestamp, parse the timestamp accordingly and returns it as an object
+     *
+     * @param timeStampStr The string timestamp that needs to be parsed (ex: 1:25.26)
+     * @return a Timestamp object
+     */
+    public Timestamp parseTimestamp(String timeStampStr) {
+        // local variables that we will use
+        String[] timeElements = new String[0];
+        Timestamp myTimestamp = new Timestamp.Builder().build();
+
+        // parse the element
+        try {
+            // check if it has a period
+            if (timeStampStr.contains(".") && !timeStampStr.contains(":")) {
+                timeElements = timeStampStr.split(".");
+
+                // check that both are valid ints
+                boolean isValid = isValidInt(timeElements);
+
+                // length of the array needs to be 2
+                if (timeElements.length != 2 && !isValid) {
+                    throw new IllegalArgumentException("Not a valid timestamp");
+                } else {
+                    myTimestamp = new Timestamp.Builder()
+                            .setMinute(Integer.parseInt(timeElements[0]))
+                            .setSeconds(Integer.parseInt(timeElements[1]))
+                            .setMilliseconds(Integer.parseInt(timeElements[2]))
+                            .build();
+                }
+
+            } else if (!timeStampStr.contains(".") && timeStampStr.contains(":")) {
+                timeElements = timeStampStr.split(":");
+
+                // check that both are valid ints
+                boolean isValid = isValidInt(timeElements);
+
+                // length of the array needs to be 2
+                if (timeElements.length != 2 && !isValid) {
+                    throw new IllegalArgumentException("Not a valid timestamp");
+                } else {
+                    myTimestamp = new Timestamp.Builder()
+                            .setMinute(Integer.parseInt(timeElements[0]))
+                            .setSeconds(Integer.parseInt(timeElements[1]))
+                            .build();
+                }
+            } else if (timeStampStr.contains(".") && timeStampStr.contains(":")) {
+                timeElements = timeStampStr.split("[:.]");
+
+                // check that both are valid ints
+                boolean isValid = isValidInt(timeElements);
+
+                // length of the array needs to be 3
+                if (timeElements.length != 3 && !isValid) {
+                    throw new IllegalArgumentException("Not a valid timestamp");
+                } else {
+                    myTimestamp = new Timestamp.Builder()
+                            .setMinute(Integer.parseInt(timeElements[0]))
+                            .setSeconds(Integer.parseInt(timeElements[1]))
+                            .setMilliseconds(Integer.parseInt(timeElements[2]))
+                            .build();
+                }
+            } else {
+                throw new IllegalArgumentException("not a valid timestamp");
+            }
+        } catch (IllegalArgumentException re) {
+            System.out.println("Not a valid timestamp");
+        }
+        return myTimestamp;
+    }
+
+    // helper function to see if it's a valid int once parsed
+    private boolean isValidInt(String[] str) {
+        boolean flag = true;
+        for (String s : str) {
+            try {
+                Integer.parseInt(s);
+                flag = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Not a valid Integer");
+                flag = false;
+            }
+        }
+        return flag;
     }
 
 

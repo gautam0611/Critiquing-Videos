@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Screenshot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Timestamp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Critiquing/Video.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
