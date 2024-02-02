@@ -1,5 +1,8 @@
 package Critiquing;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * This class will represent any operations we want to perform involving Timestamps
  * <p>
@@ -9,7 +12,7 @@ public final class Timestamp {
     // define instance variables
     private final int minute;
     private final int seconds;
-    private final long milliseconds;
+    private final int milliseconds;
 
     // Create a builder class
     public static class Builder {
@@ -75,7 +78,7 @@ public final class Timestamp {
      *
      * @return the milliseconds (if specified) from the timestamp
      */
-    public long getMilliseconds() {
+    public int getMilliseconds() {
         return this.milliseconds;
     }
 
@@ -166,16 +169,25 @@ public final class Timestamp {
         return flag;
     }
 
+    /**
+     * Given a string timestamp, parses the timestamp accordingly and returns it in LocalTime format
+     *
+     * @param timeStampStr
+     * @return a properly formatted String
+     */
+    public String formatTimetoStandard(Timestamp t1) {
 
-    // @FIXME discuss if we need to have a timestamp in a "standard" format because FFMpeg takes in strings
-//    /**
-//     * Given a string timestamp, parases the timestamp accordingly and returns it in DateFormatter format
-//     * @param timeStampStr
-//     * @return a properly formatted String
-//     */
-//    public String formatTimetoStandard(String timeStampStr) {
-//        return;
-//    }
+        // Parse the input string timestamp into a LocalTime object
+        LocalTime localTime = LocalTime.of(0, t1.getMinute(), t1.getSeconds(), t1.getMilliseconds() * 1_000_000);
+
+        // Create a DateTimeFormatter for the official timestamp format
+        DateTimeFormatter officialFormatter = DateTimeFormatter.ofPattern("mm:ss.SSS");
+
+        // Format the LocalTime object using the DateTimeFormatter
+        String myTime = localTime.format(officialFormatter);
+
+        return myTime;
+    }
 
     /**
      * Calculates the duration within the given range of timestamps
