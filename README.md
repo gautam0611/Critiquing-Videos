@@ -33,39 +33,41 @@
 * If a dictionary provided with names, videos will be named accordingly
 
 2. Take Screenshots of Video - Takes a video and returns screenshots of the specified timestamp/duration in a folder, labeling each screenshot with the timestamp to use as reference
-Arguments: 
-Video filename
-List of timestamps
-Ex: [1:21, 1:23, 1:10-1:20]
-If provided a range (like the one above), it’ll give a screenshot of every second including the start and end time in that range 
-Returns:
-Download screenshots to a folder which contains screenshots named by the timestamp 
+<ins> Arguments </ins> : 
+* Video filename
+* List of timestamps
+  * Ex: [1:21, 1:23, 1:10-1:20]
+* If provided a range (like the one above), it’ll give a screenshot of every second including the start and end time in that range 
+
+<ins> Returns </ins>:
+* Download screenshots to a folder which contains screenshots named by the timestamp 
+
+
 3. Get Millisecond Frames - If a user is searching for a movement (or several) that occurs during 1 second (ex: 1:26-1:27), but doesn’t know where the movement(s) occurred, they can specify the time range as well as an optional interval value (ex. 0.2 milliseconds) so that they can grab all the frames in that range. For instance, if user inputs range as 1:26-1:27 and interval as 0.2, the function would grab frames from 1:26:00, 1:26:20, 1:26:40, 1:26:60, 1:26:80, 1:27:00
-Arguments: 
-Duration 
-ex: 1:26-1:27
-Interval (optional)
+<ins> Arguments </ins> : 
+* Duration (ex: 1:26-1:27)
+* Interval (optional)
 Ex: 0.20 ms
 Returns:
 Download screenshots to a folder which contains screenshots named by the timestamp 
 4. Create Critiques Document - Creates a word document with the timestamps mapped to critiques, with each critique containing a screenshot from the video 
- Arguments:  
-Word document containing critiques listed line by line
-Folder of screenshots 
-Returns:  
-A new file of critiques w/ screenshots mapped to critiques in a table format
-The three columns of the table will be “Timestamp”, “Critique”, and “Screenshot” respectively 
+<ins> Arguments </ins> :  
+* Word document containing critiques listed line by line
+* Folder of screenshots 
+<ins> Returns </ins>:  
+* A new file of critiques w/ screenshots mapped to critiques in a table format
+* The three columns of the table will be “Timestamp”, “Critique”, and “Screenshot” respectively 
 
 5. Compile Critique Documents - Combines all of the critiques from all the specified critique documents combined into a new nicely formatted word document 
-Arguments: 
-List of word documents containing critiques
-Folder of separated songs
-Returns:
-A word doc containing all of the critiques for each video mapped to the song in a compressed folder containing the following:
-Folder of screenshots 
-Folder of trimmed videos 
-Folder of formatted docs 
-Compiled Doc   
+<ins> Arguments </ins> : 
+* List of word documents containing critiques
+* Folder of separated songs
+<ins> Returns </ins>:
+* A word doc containing all of the critiques for each video mapped to the song in a compressed folder containing the following:
+* Folder of screenshots 
+* Folder of trimmed videos 
+* Folder of formatted docs 
+* Compiled Doc   
 
 ### Improvements for Later:
 1. Annotating/Resizing Screenshot
