@@ -2,19 +2,9 @@ package Critiquing;
 
 import org.junit.jupiter.api.Test;
 
-class TimestampTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    @Test
-    void getMinute() {
-    }
-
-    @Test
-    void getSeconds() {
-    }
-
-    @Test
-    void getMilliseconds() {
-    }
+class MediaTest {
 
 //    @Test
 //    void parseTimestampHasIncorrectValues() {
@@ -28,36 +18,41 @@ class TimestampTest {
 //
 //        assertEquals("Not a valid timestamp", thrown.getMessage());
 //    }
-//
-//    @Test
-//    void parseTimestampSplitStringHasInvalidValues() {
-//
-//    }
-//
-//    @Test
-//    void parseTimestampContainsPeriodButInvalidValues() {
-//
-//    }
-//
-//    @Test
-//    void parseTimestampContainsColonButInvalidValues() {
-//
-//    }
-//
-//    @Test
-//    void parseTimestampContainsColonAndPeriodButInvalidValues() {
-//
-//    }
-//
-//
-//    @Test
-//    void parseTimestampJustSeconds() {
-//        Timestamp ts1 = new Timestamp.Builder().build();
-//        Timestamp ts2 = ts1.parseTimestamp("0:20");
-//        assertEquals(0, ts2.getMinute());
-//        assertEquals(20, ts2.getSeconds());
-//    }
-//
+
+    @Test
+    void parseTimestampSplitStringHasInvalidValues() {
+
+    }
+
+    @Test
+    void parseTimestampContainsPeriodButInvalidValues() {
+
+    }
+
+    @Test
+    void parseTimestampContainsColonButInvalidValues() {
+
+    }
+
+    @Test
+    void parseTimestampContainsColonAndPeriodButInvalidValues() {
+
+    }
+
+
+    @Test
+    void parseTimestampJustSeconds() {
+        Timestamp start = new Timestamp.Builder().build();
+        Timestamp end = new Timestamp.Builder().build();
+        Media<Screenshot> m1 = new Screenshot(start, end, "0.20.jpg");
+        Timestamp parseTs = m1.parseTimestamp("0:20");
+        assertEquals(0, parseTs.getMinute());
+        assertEquals(20, parseTs.getSeconds());
+    }
+
+    /*
+    @FIXME fix the rest of the tests from here
+     */
 //    @Test
 //    void parseTimestampJustMinute() {
 //        Timestamp ts1 = new Timestamp.Builder().build();
@@ -106,4 +101,5 @@ class TimestampTest {
 //        Timestamp end = ts1.parseTimestamp("1:30");
 //        assertEquals(4, ts1.calculateDuration(start, end));
 //    }
+
 }
