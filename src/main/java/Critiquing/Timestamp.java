@@ -2,8 +2,6 @@ package Critiquing;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This class will represent any operations we want to perform involving Timestamps
@@ -200,16 +198,8 @@ public final class Timestamp {
      */
     public long calculateDuration(Timestamp start, Timestamp end) {
         // convert everything to seconds
-        long startMin = (long) start.getMinute() * 60;
-        long startSeconds = (long) start.getSeconds();
-        long startMilliseconds = start.getMilliseconds() / 100;
-        long endMin = (long) end.getMinute() * 60;
-        long endSeconds = (long) end.getSeconds();
-        long endMilliseconds = end.getMilliseconds() / 100;
-
-        // sum up everything
-        long startTotalInSeconds = startMin + startSeconds + startMilliseconds;
-        long endTotalInSeconds = endMin + endSeconds + endMilliseconds;
+        long startTotalInSeconds = convertToSeconds(start);
+        long endTotalInSeconds = convertToSeconds(end);
 
         return endTotalInSeconds - startTotalInSeconds;
     }
@@ -218,12 +208,36 @@ public final class Timestamp {
      * Converts the timestamp objects to seconds
      *
      * @param t1 the first timestamp
-     * @param t2 the second timestamp
      * @return the sum of the timestamps
      */
-    public long convertToSeconds(Timestamp t1, Timestamp t2) {
-        return 10L;
+    public long convertToSeconds(Timestamp t1) {
+        // convert everything to seconds
+        long tMin = (long) t1.getMinute() * 60;
+        long tSeconds = (long) t1.getSeconds();
+        long tMilliseconds = t1.getMilliseconds() / 100;
+
+        // sum up everything
+        return tMin + tSeconds + tMilliseconds;
     }
+
+    /**
+     * @param d1 the seconds that we want to convert to a timestamp
+     * @return A timestamp object that represents the given timestamp
+     */
+    public Timestamp secondsToTimestamp(double d1) {
+        // find the minutes
+        int minutes = (int) (d1 / 60.0);
+        int seconds = (int) (d1 % 60.0);
+
+        // grabbing just the decimal portion - milliseconds
+        String doubleAsString = String.valueOf(d1);
+        int indexOfDecimal = doubleAsString.indexOf(".");
+        double milliseconds = Double.parseDouble(doubleAsString.substring(indexOfDecimal));
+
+        return new Timestamp.Builder().setMinute(minutes).setSeconds(seconds).setMilliseconds((int) (milliseconds * 100.0)).build();
+    }
+
+    // @FIXME need to override equals in order to compare two timestamps
 
     /**
      * Given a timestamp range (ex: 1:26-1:27) and an optional interval (ex: 0.2ms) the method returns every timestamp in that range
@@ -231,30 +245,33 @@ public final class Timestamp {
      * @param start, end, interval: The first two arguments must be valid timestamps and the optional third argument must be a value less than 1.
      * @return a list of all the timestamps in the given range
      */
-    public List<Timestamp> grabEveryTimestampInRange(Timestamp start, Timestamp end, double... interval) {
-        // initialize a list
-        List<Timestamp> tsList = new ArrayList<Timestamp>();
-
-        // running timestamp value
-        Timestamp runningTimestamp = new Timestamp.Builder().build();
-
-        // timestamp interval
-        int convertedInterval = (int) (interval[0] * 100.00);
-        Timestamp tsInterval = new Timestamp.Builder().setMilliseconds(convertedInterval).build();
-
-        /*
-        - add the interval to the value
-        - if the sum is less than the end time stamp, append to list
-        - iterate until the appended value equals the end timestamp
-         */
-
-        // if the interval is not null we will perform the following actions
-        if (interval != null) {
-            runningTimestamp = start;
-            while (runningTimestamp != end) {
-
-            }
-
-        }
-    }
+//    public List<Timestamp> grabEveryTimestampInRange(Timestamp start, Timestamp end, double... interval) {
+//        // initialize a list
+//        List<Timestamp> tsList = new ArrayList<Timestamp>();
+//
+//        // running timestamp value
+//        Timestamp runningTimestamp = new Timestamp.Builder().build();
+//
+//        // timestamp interval
+//        int convertedInterval = (int) (interval[0] * 100.00);
+//        Timestamp tsInterval = new Timestamp.Builder().setMilliseconds(convertedInterval).build();
+//
+//        // convert the interval to seconds
+//        long intervalInSeconds = convertToSeconds(tsInterval);
+//
+//        /*
+//        - add the interval to the value
+//        - if the sum is less than the end time stamp, append to list
+//        - iterate until the appended value equals the end timestamp
+//         */
+//
+//        // if the interval is not null we will perform the following actions
+//        if (interval != null) {
+//            runningTimestamp = start;
+//            while (runningTimestamp != end) {
+//
+//            }
+//
+//        }
+//    }
 }
