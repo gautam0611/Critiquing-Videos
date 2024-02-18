@@ -2,6 +2,7 @@ package Critiquing;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 /**
  * This class will represent any operations we want to perform involving Timestamps
@@ -238,6 +239,26 @@ public final class Timestamp {
     }
 
     // @FIXME need to override equals in order to compare two timestamps
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Timestamp)) {
+            return false;
+        }
+
+        Timestamp ts = (Timestamp) o;
+
+        return ts.getMinute() == this.getMinute() && ts.getMilliseconds() == this.getMilliseconds() && ts.getSeconds() == this.getSeconds();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(seconds, minute, milliseconds);
+    }
+
 
     /**
      * Given a timestamp range (ex: 1:26-1:27) and an optional interval (ex: 0.2ms) the method returns every timestamp in that range
