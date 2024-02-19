@@ -12,7 +12,6 @@ public final class Screenshot extends Media<Screenshot> {
     // initialize instance variables
     private final Timestamp start;
     private final Timestamp end;
-    private final long duration;
     private final String screenshotName;
 
     // constructor
@@ -20,7 +19,6 @@ public final class Screenshot extends Media<Screenshot> {
         this.start = start;
         this.end = end;
         this.screenshotName = screenshotName;
-        this.duration = calculateDuration(this.start, this.end);
     }
 
 
@@ -37,8 +35,8 @@ public final class Screenshot extends Media<Screenshot> {
         String[] command = {
                 "ffmpeg",
                 "-i", inputPath,
-                "-ss", // need to insert this value // the startTime
-                "-t", // need to insert this value, // the duration
+                "-ss", formatTimetoStandard(start),// need to insert this value // the startTime
+                "-to", formatTimetoStandard(end), // need to insert this value, // the duration
                 "-c", "copy",
                 outputPath
         };
