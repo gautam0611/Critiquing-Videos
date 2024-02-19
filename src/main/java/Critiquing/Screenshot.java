@@ -1,6 +1,8 @@
 package Critiquing;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * This class will represent any operations we want to perform involving screenshots
@@ -23,8 +25,26 @@ public final class Screenshot extends Media<Screenshot> {
 
 
     @Override
-    public Screenshot convertTo(String extension) {
-        return null;
+    public void convertTo(String inputFilePath, String outputFilePath) {
+        String ffmpegCmd = "ffmpeg -i " + inputFilePath + " " + outputFilePath;
+        try {
+            Process process = Runtime.getRuntime().exec(ffmpegCmd);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            int exitCode = process.waitFor();
+            if (exitCode == 0) {
+                System.out.println("Image conversion successful.");
+            } else {
+                System.out.println("Image conversion failed with error code: " + exitCode);
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

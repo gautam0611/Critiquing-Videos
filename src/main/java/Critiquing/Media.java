@@ -16,10 +16,11 @@ public abstract class Media<T> {
     /**
      * A method used to convert a specified type to a specific extension
      *
-     * @param extension the extension that we want to convert our media type to
+     * @param inputFilePath  the input file path of our screenshot
+     * @param outputFilePath the output file path of our screenshot
      * @return The specified media type with the specified extension.
      */
-    public abstract T convertTo(String extension);
+    public abstract void convertTo(String inputFilePath, String outputFilePath);
 
     /**
      * A method used to download videos or screenshots to a specific location
@@ -165,11 +166,11 @@ public abstract class Media<T> {
      * @param t1 the first timestamp
      * @return the sum of the timestamps
      */
-    public long convertToSeconds(Timestamp t1) {
+    public double convertToSeconds(Timestamp t1) {
         // convert everything to seconds
-        long tMin = (long) t1.getMinute() * 60;
-        long tSeconds = (long) t1.getSeconds();
-        long tMilliseconds = t1.getMilliseconds() / 100;
+        double tMin = t1.getMinute() * 60;
+        double tSeconds = t1.getSeconds();
+        double tMilliseconds = t1.getMilliseconds();
 
         // sum up everything
         return tMin + tSeconds + tMilliseconds;
@@ -203,16 +204,16 @@ public abstract class Media<T> {
         List<Timestamp> tsList = new ArrayList<Timestamp>();
 
         // running timestamp value
-        long runningTimestamp = 0;
+        double runningTimestamp = 0;
 
         // timestamp interval
         int convertedInterval = (int) (interval[0] * 100.00);
         Timestamp tsInterval = new Timestamp.Builder().setMilliseconds(convertedInterval).build();
 
         // convert all to seconds
-        long intervalInSeconds = convertToSeconds(tsInterval);
-        long startTimeInSeconds = convertToSeconds(start);
-        long endTimeInSeconds = convertToSeconds(end);
+        double intervalInSeconds = convertToSeconds(tsInterval);
+        double startTimeInSeconds = convertToSeconds(start);
+        double endTimeInSeconds = convertToSeconds(end);
 
         // if the interval is not null we will perform the following actions
         if (interval != null) {
