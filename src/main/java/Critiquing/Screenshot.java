@@ -1,6 +1,8 @@
 package Critiquing;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * This class will represent any operations we want to perform involving screenshots
@@ -12,7 +14,6 @@ public final class Screenshot extends Media<Screenshot> {
     // initialize instance variables
     private final Timestamp start;
     private final Timestamp end;
-    private final long duration;
     private final String screenshotName;
 
     // constructor
@@ -20,13 +21,30 @@ public final class Screenshot extends Media<Screenshot> {
         this.start = start;
         this.end = end;
         this.screenshotName = screenshotName;
-        this.duration = calculateDuration(this.start, this.end);
     }
 
 
     @Override
-    public Screenshot convertTo(String extension) {
-        return null;
+    public void convertTo(String inputFilePath, String outputFilePath) {
+        String ffmpegCmd = "ffmpeg -i " + inputFilePath + " " + outputFilePath;
+        try {
+            Process process = Runtime.getRuntime().exec(ffmpegCmd);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            int exitCode = process.waitFor();
+            if (exitCode == 0) {
+                System.out.println("Image conversion successful.");
+            } else {
+                System.out.println("Image conversion failed with error code: " + exitCode);
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -37,8 +55,8 @@ public final class Screenshot extends Media<Screenshot> {
         String[] command = {
                 "ffmpeg",
                 "-i", inputPath,
-                "-ss", // need to insert this value // the startTime
-                "-t", // need to insert this value, // the duration
+                "-ss", formatTimetoStandard(start),// need to insert this value // the startTime
+                "-to", formatTimetoStandard(end), // need to insert this value, // the duration
                 "-c", "copy",
                 outputPath
         };

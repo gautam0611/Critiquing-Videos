@@ -1,6 +1,10 @@
 package Critiquing;
 
 import java.io.IOException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents an abstract class containing methods for any class involving manipulating media.
@@ -12,10 +16,11 @@ public abstract class Media<T> {
     /**
      * A method used to convert a specified type to a specific extension
      *
-     * @param extension the extension that we want to convert our media type to
+     * @param inputFilePath  the input file path of our screenshot
+     * @param outputFilePath the output file path of our screenshot
      * @return The specified media type with the specified extension.
      */
-    public abstract T convertTo(String extension);
+    public abstract void convertTo(String inputFilePath, String outputFilePath);
 
     /**
      * A method used to download videos or screenshots to a specific location
@@ -133,5 +138,100 @@ public abstract class Media<T> {
             }
         }
         return flag;
+    }
+
+    /**
+     * Given a string timestamp, parses the timestamp accordingly and returns it in LocalTime format
+     *
+     * @param t1 the timestamp that we need to format to a string
+     * @return a properly formatted String
+     */
+    public String formatTimetoStandard(Timestamp t1) {
+
+        // Parse the input string timestamp into a LocalTime object
+        LocalTime localTime = LocalTime.of(0, t1.getMinute(), t1.getSeconds(), t1.getMilliseconds() * 1_000_000);
+
+        // Create a DateTimeFormatter for the official timestamp format
+        DateTimeFormatter officialFormatter = DateTimeFormatter.ofPattern("mm:ss.SSS");
+
+        // Format the LocalTime object using the DateTimeFormatter
+        String myTime = localTime.format(officialFormatter);
+
+        return myTime;
+    }
+
+    /**
+     * Converts the timestamp objects to seconds
+     *
+     * @param t1 the first timestamp
+     * @return the sum of the timestamps
+     */
+    public double convertToSeconds(Timestamp t1) {
+        // convert everything to seconds
+        double tMin = t1.getMinute() * 60;
+        double tSeconds = t1.getSeconds();
+        double tMilliseconds = t1.getMilliseconds();
+
+        // sum up everything
+        return tMin + tSeconds + tMilliseconds;
+    }
+
+    /**
+     * @param d1 the seconds that we want to convert to a timestamp
+     * @return A timestamp object that represents the given timestamp
+     */
+    public Timestamp secondsToTimestamp(double d1) {
+        // find the minutes
+        int minutes = (int) (d1 / 60.0);
+        int seconds = (int) (d1 % 60.0);
+
+        // grabbing just the decimal portion - milliseconds
+        String doubleAsString = String.valueOf(d1);
+        int indexOfDecimal = doubleAsString.indexOf(".");
+        double milliseconds = Double.parseDouble(doubleAsString.substring(indexOfDecimal));
+
+        return new Timestamp.Builder().setMinute(minutes).setSeconds(seconds).setMilliseconds((int) (milliseconds * 100.0)).build();
+    }
+
+    /**
+     * Given a timestamp range (ex: 1:26-1:27) and an optional interval (ex: 0.2ms) the method returns every timestamp in that range
+     *
+     * @param start, end, interval: The first two arguments must be valid timestamps and the optional third argument must be a value less than 1.
+     * @return a list of all the timestamps in the given range
+     */
+    public List<Timestamp> grabEveryTimestampInRange(Timestamp start, Timestamp end, double... interval) {
+        // initialize a list
+        List<Timestamp> tsList = new ArrayList<Timestamp>();
+
+        // running timestamp value
+        double runningTimestamp = 0;
+
+        // timestamp interval
+        int convertedInterval = (int) (interval[0] * 100.00);
+        Timestamp tsInterval = new Timestamp.Builder().setMilliseconds(convertedInterval).build();
+
+        // convert all to seconds
+        double intervalInSeconds = convertToSeconds(tsInterval);
+        double startTimeInSeconds = convertToSeconds(start);
+        double endTimeInSeconds = convertToSeconds(end);
+
+        // if the interval is not null we will perform the following actions
+        if (interval != null) {
+            runningTimestamp = startTimeInSeconds;
+
+            while (runningTimestamp <= endTimeInSeconds) {
+                // add to our list
+                tsList.add(secondsToTimestamp((double) runningTimestamp));
+
+                // increment runningTimestamp
+                runningTimestamp += intervalInSeconds;
+            }
+        } else {
+            // just add the start and end because there is no specified interval
+            tsList.add(start);
+            tsList.add(end);
+        }
+
+        return tsList;
     }
 }
