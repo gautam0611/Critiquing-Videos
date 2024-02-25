@@ -12,14 +12,10 @@ import java.io.InputStreamReader;
  */
 public final class Screenshot extends Media<Screenshot> {
     // initialize instance variables
-    private final Timestamp start;
-    private final Timestamp end;
     private final String screenshotName;
 
     // constructor
-    public Screenshot(Timestamp start, Timestamp end, String screenshotName) {
-        this.start = start;
-        this.end = end;
+    public Screenshot(String screenshotName) {
         this.screenshotName = screenshotName;
     }
 
@@ -47,16 +43,19 @@ public final class Screenshot extends Media<Screenshot> {
         }
     }
 
+
     @Override
-    public void cutAndDownload(String media, String inputPath, String outputPath) throws IOException, InterruptedException {
+    public void cutAndDownload(String media, String inputPath, String outputPath, String startTime, String endTime) throws IOException, InterruptedException {
         // the start time
+        Timestamp Tstart = this.parseTimestamp(startTime);
 
         // FFmpeg command to trim video
         String[] command = {
                 "ffmpeg",
                 "-i", inputPath,
-                "-ss", formatTimetoStandard(start),// need to insert this value // the startTime
-                "-to", formatTimetoStandard(end), // need to insert this value, // the duration
+                "-ss", String.valueOf(), // capture time in seconds
+                "vframes", "1",
+                "q:v", "2",
                 "-c", "copy",
                 outputPath
         };

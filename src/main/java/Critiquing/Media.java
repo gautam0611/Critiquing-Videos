@@ -29,7 +29,7 @@ public abstract class Media<T> {
      * @param inputPath  the input file path that we want to get the file from
      * @param outputPath the output file path that we want to download to
      */
-    public abstract void cutAndDownload(String media, String inputPath, String outputPath) throws IOException, InterruptedException;
+    public abstract void cutAndDownload(String media, String inputPath, String outputPath, String startTime, String endTime) throws IOException, InterruptedException;
 
     /**
      * Calculates the duration within the given range of timestamps
