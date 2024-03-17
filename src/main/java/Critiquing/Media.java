@@ -29,7 +29,7 @@ public abstract class Media<T> {
      * @param inputPath  the input file path that we want to get the file from
      * @param outputPath the output file path that we want to download to
      */
-    public abstract void cutAndDownload(String media, String inputPath, String outputPath, String startTime, String endTime) throws IOException, InterruptedException;
+    public abstract void cutAndDownload(String media, String inputPath, String outputPath) throws IOException, InterruptedException;
 
     /**
      * Calculates the duration within the given range of timestamps
@@ -42,10 +42,10 @@ public abstract class Media<T> {
         // convert everything to seconds
         long startMin = (long) start.getMinute() * 60;
         long startSeconds = (long) start.getSeconds();
-        long startMilliseconds = start.getMilliseconds() / 100;
+        long startMilliseconds = (long) start.getMilliseconds();
         long endMin = (long) end.getMinute() * 60;
         long endSeconds = (long) end.getSeconds();
-        long endMilliseconds = end.getMilliseconds() / 100;
+        long endMilliseconds = (long) end.getMilliseconds();
 
         // sum up everything
         long startTotalInSeconds = startMin + startSeconds + startMilliseconds;
@@ -149,7 +149,7 @@ public abstract class Media<T> {
     public String formatTimetoStandard(Timestamp t1) {
 
         // Parse the input string timestamp into a LocalTime object
-        LocalTime localTime = LocalTime.of(0, t1.getMinute(), t1.getSeconds(), t1.getMilliseconds() * 1_000_000);
+        LocalTime localTime = LocalTime.of(0, t1.getMinute(), t1.getSeconds(), (int) (t1.getMilliseconds() * 100));
 
         // Create a DateTimeFormatter for the official timestamp format
         DateTimeFormatter officialFormatter = DateTimeFormatter.ofPattern("mm:ss.SSS");
@@ -207,8 +207,9 @@ public abstract class Media<T> {
         double runningTimestamp = 0;
 
         // timestamp interval
-        int convertedInterval = (int) (interval[0] * 100.00);
-        Timestamp tsInterval = new Timestamp.Builder().setMilliseconds(convertedInterval).build();
+        double convertedInterval = interval[0];
+        int convertIntervalTimestamp = (int) convertedInterval;
+        Timestamp tsInterval = new Timestamp.Builder().setMilliseconds(convertIntervalTimestamp).build();
 
         // convert all to seconds
         double intervalInSeconds = convertToSeconds(tsInterval);
