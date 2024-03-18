@@ -2,6 +2,8 @@ package Critiquing;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MediaTest {
@@ -42,12 +44,27 @@ class MediaTest {
 
     @Test
     void parseTimestampJustSeconds() {
-        Timestamp start = new Timestamp.Builder().build();
-        Timestamp end = new Timestamp.Builder().build();
-        Media<Screenshot> m1 = new Screenshot(start, end, "0.20.jpg");
+        String captureTime = "0:25";
+        Media<Screenshot> m1 = new Screenshot("0.20.jpg", captureTime);
         Timestamp parseTs = m1.parseTimestamp("0:20");
         assertEquals(0, parseTs.getMinute());
         assertEquals(20, parseTs.getSeconds());
+    }
+
+    @Test
+    void printOutEveryTimestampInRange() {
+        Media<Video> v1 = new Video("1:25", "1:26");
+        Timestamp startTime = new Timestamp.Builder().setMinute(1).setSeconds(25).build();
+        Timestamp endTime = new Timestamp.Builder().setMinute(1).setSeconds(26).build();
+        List<Timestamp> tsList = v1.grabEveryTimestampInRange(startTime, endTime, 0.2);
+        assertEquals(tsList.get(1).getMinute(), 1);
+        assertEquals(tsList.get(1).getSeconds(), 25);
+        assertEquals(tsList.get(1).getMilliseconds(), 20);
+    }
+
+    @Test
+    void formattingTimetoStandard() {
+        
     }
 
     /*
@@ -93,13 +110,14 @@ class MediaTest {
 //        assertEquals(0, ts2.getSeconds());
 //        assertEquals(26, ts2.getMilliseconds());
 //    }
-//
-//    @Test
-//    void calculateDuration() {
-//        Timestamp ts1 = new Timestamp.Builder().build();
-//        Timestamp start = ts1.parseTimestamp("1:26");
-//        Timestamp end = ts1.parseTimestamp("1:30");
-//        assertEquals(4, ts1.calculateDuration(start, end));
-//    }
+
+    @Test
+    void calculateDuration() {
+        Timestamp ts1 = new Timestamp.Builder().build();
+        Media<Video> v1 = new Video("1:26", "1:30");
+        Timestamp start = v1.parseTimestamp("1:26");
+        Timestamp end = v1.parseTimestamp("1:30");
+        assertEquals(4, v1.calculateDuration(start, end));
+    }
 
 }

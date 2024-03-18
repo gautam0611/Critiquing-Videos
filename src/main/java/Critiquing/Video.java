@@ -11,6 +11,15 @@ import java.io.InputStreamReader;
  */
 public final class Video extends Media<Video> {
 
+    // instance variables
+    private final String startTime;
+    private final String endTime;
+
+    public Video(String start, String end) {
+        this.startTime = start;
+        this.endTime = end;
+    }
+
     @Override
     public void convertTo(String inputFilePath, String outputFilePath) {
         String ffmpegCmd = "ffmpeg -i " + inputFilePath + " " + outputFilePath;
@@ -35,20 +44,22 @@ public final class Video extends Media<Video> {
     }
 
     @Override
-    public void cutAndDownload(String media, String inputPath, String outputPath, String startTime, String endTime)
+    public void cutAndDownload(String media, String inputPath, String outputPath)
             throws IOException, InterruptedException {
 
-        // converting the passed in startTimes to timestamp objects
-        // we will convert these objects to the appropriate string format
-        Timestamp Tstart = this.parseTimestamp(startTime);
-        Timestamp Tend = this.parseTimestamp(endTime);
+        // convert our timestamp objects to strings
+        Timestamp startTimeTimestamp = this.parseTimestamp(this.startTime);
+        String startTimeFormatted = this.formatTimetoStandard(startTimeTimestamp);
+
+        Timestamp endTimeTimestamp = this.parseTimestamp(this.endTime);
+        String endTimeFormatted = this.formatTimetoStandard(endTimeTimestamp);
 
         // our string command
         String[] command = {
                 "ffmpeg",
                 "-i", inputPath,
-                "-ss", this.formatTimetoStandard(Tstart),// // the startTime
-                "-to", this.formatTimetoStandard(Tend), // // the duration
+                "-ss", startTimeFormatted,// // the startTime
+                "-to", endTimeFormatted, // // the duration
                 "-c", "copy",
                 outputPath
         };
