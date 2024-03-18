@@ -1,6 +1,7 @@
 package Critiquing;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -225,7 +226,11 @@ public abstract class Media<T> {
                 tsList.add(secondsToTimestamp((double) runningTimestamp));
 
                 // increment runningTimestamp
-                runningTimestamp += intervalInSeconds;
+                runningTimestamp += interval[0];
+                // Creating an object of DecimalFormat class
+                DecimalFormat df_obj = new DecimalFormat("#.##");
+                runningTimestamp = Double.parseDouble(df_obj.format(runningTimestamp));
+
             }
         } else {
             // just add the start and end because there is no specified interval
